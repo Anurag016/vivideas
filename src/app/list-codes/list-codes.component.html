@@ -1,0 +1,26 @@
+<html>
+    <body>
+        Select Product Id:
+        <select (change)="product_change($event.target.value)">
+            <option *ngFor="let p of product" value={{p.productid}} >{{p.productid}}</option>
+        </select>
+
+        <table *ngIf="items.length>0">
+            <tr>
+                <td>Product ID</td>
+                <td>Batch no</td>
+                <td>MFG date</td>
+                <td>EXP Date</td>
+                <td>Unique Code</td>
+            </tr>
+            <tr *ngFor="let item of items">
+                <td>{{item.productid}}</td>
+                <td>{{item.batchno}}</td>
+                <td>{{item.mfgdate}}</td>
+                <td>{{item.expdate}}</td>
+                <td>{{item.code}}</td>
+
+            </tr>
+        </table>
+    </body>
+</html>

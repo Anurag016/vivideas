@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1>Add New Product</h1> <button (click)="gcodebtn()">Generate Unique Codes</button>
+        <form class="productform" [formGroup]="productform" (ngSubmit)="product_save()">
+            <table>
+            <tr>
+                <td>Product ID:</td>
+                <td><input type="text" formControlName="pid"></td>
+            </tr>
+            <tr>
+                <td>Product Name:</td>
+                <td><input type="text" formControlName="pname"></td>
+            </tr>
+            <tr>
+                <td>Product Image:</td>
+                <td><input type="file" formControlName="pimage" (change)="imageupload($event)"></td>
+            </tr>
+            <tr>
+                <button>Save</button>
+            </tr>
+            </table>
+        </form>
+    </body>
+</html>

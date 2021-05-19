@@ -1,0 +1,37 @@
+<body>
+    <form [formGroup]="registerform" (ngSubmit)="onLoggedin()">
+ <div class="registerform"> 
+    <h2>Register Form</h2>
+    <table >
+        <tr>
+            <td>Full Name: </td>
+            <td><input formControlName="fullname"></td>
+        </tr>
+        <tr>
+            <td>email: </td>
+            <td><input formControlName="email"></td>
+        </tr>
+        <tr>
+            <td>Password: </td>
+            <td><input formControlName="password"></td>
+        </tr>
+        <tr>
+            <td>User Type:</td>
+            <select formControlName="usertype">
+                <option value="Admin">Admin</option>
+                <option value="customer">Customer</option>
+            </select>
+        </tr>
+        <tr>
+            <td style="font-size: 12px;">
+                Already Registered? <a routerLink="/login">Login Here</a>
+            </td>
+            <td>
+                <button >Register</button>
+            </td>
+        </tr>
+    </table>
+</div> 
+</form>
+
+</body>

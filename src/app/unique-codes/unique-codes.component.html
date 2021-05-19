@@ -1,0 +1,65 @@
+<html>
+<body>
+    <button (click)="returntomaster()">Return to master</button>
+    <form [formGroup]="code_form" (ngSubmit)="generate_codes()">
+        <table>
+            <tr>
+                <td>
+                    Product Id:<input type="text" formControlName="pid">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Batch No:<input type="text" formControlName="pbatch">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    MFG Date<input type="text" formControlName="mfgdate">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    EXP Date:<input type="text" formControlName="expdate">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    No of unique codes:<input type="text" formControlName="codes">
+                </td>
+            </tr>
+            <tr>
+                <button>Generate codes</button>
+            </tr>
+        </table>
+    </form>
+
+    <table *ngIf="generatedcodes.length>0">
+        <tr>
+            <td>Product ID</td>
+            <td>Batch No.</td>
+            <td>MFG Date</td>
+            <td>EXP Date</td>
+            <td>Unique Code</td>
+        </tr>
+        <tr *ngFor="let product of generatedcodes">
+            <td>
+               {{product.productid}}
+            </td>
+            <td>
+                {{product.batchno}}
+             </td>
+             <td>
+                {{product.mfgdate}}
+             </td>
+             <td>
+                {{product.expdate}}
+             </td>
+             <td>
+                {{product.code}}
+             </td>
+        </tr>    
+    </table>
+
+</body>
+</html>
